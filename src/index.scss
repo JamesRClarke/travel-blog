@@ -1,0 +1,59 @@
+// 1. Import the initial variables
+@import "bulma/sass/utilities/initial-variables";
+@import "bulma/sass/utilities/functions";
+@import 'bulma/bulma';
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.4rem 14px;
+}
+
+.map_container {
+  text-align: center;
+  padding:  50px 0;
+  display: flex;
+  align-items: top;
+  justify-content: space-between;
+
+
+  .world_map {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+
+    &.countries {
+      margin-left: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 720px) {
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+
+    .world_map {
+      margin: 15px 0;
+      width:100%;
+    }
+  }
+
+  .country_tab_content {
+    padding: 30px;
+    h3 {
+      text-align: left;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap
+    }
+  }
+
+}
