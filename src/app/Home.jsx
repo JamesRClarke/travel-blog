@@ -7,11 +7,10 @@ import mapJson from '../assets/map/map.json'
 
 class Home extends React.Component {
   state = {
-    center: [0, 0]
+    center: [100.9925, 15.8700]
   }
 
   changeCenter = (center) => {
-    console.log('triggered center');
     this.setState({
       center: center
     })

@@ -1,40 +1,54 @@
 import React from 'react';
 import { Tab, TabPanel, TabList } from 'react-web-tabs';
+import coordinates from '../../../../assets/map/coordinate.json'
 
-
-const centers: [{}];
+const centers = [{}];
 
 const AsiaTabs = (props) => (
   <div>
-     <TabList >
-       <Tab onClick={props.center.bind()} tabFor="thai">Thailand</Tab>
-       <Tab  tabFor="mal">Malaysia</Tab>
-       <Tab  tabFor="ind">Indonesia</Tab>
-       <Tab  tabFor="viet">Vietnam</Tab>
-       <Tab  tabFor="cam">Cambodia</Tab>
-     </TabList>
+    <TabList >
+      <Tab  onClick={props.center.bind(this, [coordinates[0].asia.thailand.lat,      coordinates[0].asia.thailand.lng])} tabFor="thai">
+        Thailand
+      </Tab>
+      <Tab  onClick={props.center.bind(this, [coordinates[0].asia.indonesia.lat,      coordinates[0].asia.indonesia.lng])} tabFor="ind">
+        Indonesia
+      </Tab>
+      <Tab  onClick={props.center.bind(this, [coordinates[0].asia.vietnam.lat,      coordinates[0].asia.vietnam.lng])} tabFor="viet">
+        Vietnam
+      </Tab>
+        <Tab  onClick={props.center.bind(this, [coordinates[0].asia.australia.lat,      coordinates[0].asia.australia.lng])} tabFor="aus">
+          Australia
+        </Tab>
+      </TabList>
 
-    <TabPanel tabId="thai">
-      <div className="country_tab_content">
-        <h3>Thailand</h3>
-        <div> </div>
-      </div>
-    </TabPanel>
+      <TabPanel tabId="thai">
+        <div className="country_tab_content">
+          <h3>Thailand</h3>
+          <div> </div>
+        </div>
+      </TabPanel>
 
-    <TabPanel tabId="ind">
-      <div className="country_tab_content">
-        <h3>Indonesia</h3>
-        <div></div>
-      </div>
-    </TabPanel>
+      <TabPanel tabId="ind">
+        <div className="country_tab_content">
+          <h3>Indonesia</h3>
+          <div></div>
+        </div>
+      </TabPanel>
 
-    <TabPanel tabId="viet">
-      <div className="country_tab_content">
-        <h3>Vietnam</h3>
-        <div></div>
-      </div>
-    </TabPanel>
+      <TabPanel tabId="viet">
+        <div className="country_tab_content">
+          <h3>Vietnam</h3>
+          <div></div>
+        </div>
+      </TabPanel>
 
-  </div>
-)
-export default AsiaTabs;
+      <TabPanel tabId="aus">
+        <div className="country_tab_content">
+          <h3>Australia</h3>
+          <div></div>
+        </div>
+      </TabPanel>
+
+    </div>
+  )
+  export default AsiaTabs;

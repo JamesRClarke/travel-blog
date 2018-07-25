@@ -8,22 +8,28 @@ import {
   Marker
 } from "react-simple-maps"
 import { Motion, spring } from "react-motion";
+import markerCoordinates from '../../../assets/map/markers.json'
 
 const mapStyles = {
   width: "100%",
   height: "500px",
 }
+const markers = markerCoordinates;
 
-const markers = [
-  { coordinates: [3.3792, 6.5244] },
-  { coordinates: [139.6917, 35.6895] },
-  { coordinates: [-74.0721, 4.711] },
-  { coordinates: [-118.2437, 34.0522] }
-]
 
 const WorldMap = (props) => (
   <div className="world_map globe">
-
+    <Motion
+          defaultStyle={{
+            x: props.center[0],
+            y: props.center[1]
+          }}
+          style={{
+            x: spring(props.center[0]),
+            y: spring(props.center[1])
+          }}
+        >
+          {({ x, y }) => (
     <ComposableMap
       width={500}
       height={500}
@@ -32,7 +38,7 @@ const WorldMap = (props) => (
       style={mapStyles}
       disableOptimisation={true}
     >
-      <ZoomableGlobe>
+      <ZoomableGlobe center={[x, y]}>
         <circle cx={250} cy={250} r={250} fill="#98F5FF" stroke="#436b95" />
         <Geographies
           disableOptimization
@@ -60,12 +66,14 @@ const WorldMap = (props) => (
                hidden: { display: "none" }
              }}
            >
-             <circle cx={0} cy={0} r={8} fill="#fff" stroke="#000" />
+             <circle cx={0} cy={0} r={7} fill={marker.fill}  strokeWidth="1.5" stroke="white" />
            </Marker>
          ))}
        </Markers>
       </ZoomableGlobe>
     </ComposableMap>
+  )}
+  </Motion>
   </div>
 )
 
