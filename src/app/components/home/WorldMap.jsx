@@ -9,7 +9,6 @@ import {
 } from "react-simple-maps"
 import { Motion, spring } from "react-motion";
 
-
 const mapStyles = {
   width: "100%",
   height: "500px",
@@ -21,7 +20,6 @@ const markers = [
   { coordinates: [-74.0721, 4.711] },
   { coordinates: [-118.2437, 34.0522] }
 ]
-
 
 const WorldMap = (props) => (
   <div className="world_map globe">
@@ -54,8 +52,9 @@ const WorldMap = (props) => (
           }
         </Geographies>
         <Markers>
-         {markers.map(marker => (
+         {markers.map((marker, i) => (
            <Marker
+             key={i}
              marker={marker}
              style={{
                hidden: { display: "none" }

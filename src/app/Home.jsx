@@ -3,12 +3,29 @@ import React from 'react'
 import WorldMap from './components/home/WorldMap'
 import Countries from './components/home/Countries'
 import mapJson from '../assets/map/map.json'
-const Home = () => (
-  <div>
-    <div className="map_container">
-      <Countries />
-      <WorldMap json={mapJson}  />
-    </div>
-  </div>
-)
+
+
+class Home extends React.Component {
+  state = {
+    center: [0, 0]
+  }
+
+  changeCenter = (center) => {
+    console.log('triggered center');
+    this.setState({
+      center: center
+    })
+  }
+
+  render() {
+    return(
+      <div>
+        <div className="map_container">
+          <Countries clicked={this.changeCenter}/>
+          <WorldMap json={mapJson} center={this.state.center} />
+        </div>
+      </div>
+    )
+  }
+}
 export default Home;

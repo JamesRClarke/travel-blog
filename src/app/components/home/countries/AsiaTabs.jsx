@@ -2,14 +2,16 @@ import React from 'react';
 import { Tab, TabPanel, TabList } from 'react-web-tabs';
 
 
-const AsiaTabs = () => (
+const centers: [{}];
+
+const AsiaTabs = (props) => (
   <div>
      <TabList >
-       <Tab tabFor="thai">Thailand</Tab>
-       <Tab tabFor="mal">Malaysia</Tab>
-       <Tab tabFor="ind">Indonesia</Tab>
-       <Tab tabFor="viet">Vietnam</Tab>
-       <Tab tabFor="cam">Cambodia</Tab>
+       <Tab onClick={props.center.bind()} tabFor="thai">Thailand</Tab>
+       <Tab  tabFor="mal">Malaysia</Tab>
+       <Tab  tabFor="ind">Indonesia</Tab>
+       <Tab  tabFor="viet">Vietnam</Tab>
+       <Tab  tabFor="cam">Cambodia</Tab>
      </TabList>
 
     <TabPanel tabId="thai">
@@ -32,7 +34,7 @@ const AsiaTabs = () => (
         <div></div>
       </div>
     </TabPanel>
-    
+
   </div>
 )
 export default AsiaTabs;
