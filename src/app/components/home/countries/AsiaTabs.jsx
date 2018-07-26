@@ -1,8 +1,7 @@
 import React from 'react';
 import { Tab, TabPanel, TabList } from 'react-web-tabs';
 import coordinates from '../../../../assets/map/coordinate.json'
-
-const centers = [{}];
+import Flag from './Flag'
 
 const AsiaTabs = (props) => (
   <div>
@@ -23,29 +22,37 @@ const AsiaTabs = (props) => (
 
       <TabPanel tabId="thai">
         <div className="country_tab_content">
-          <h3>Thailand</h3>
-          <div> </div>
+          <div  >
+            <Flag countryCode="TH"></Flag>
+            <h3>Thailand</h3>
+          </div>
         </div>
       </TabPanel>
 
       <TabPanel tabId="ind">
         <div className="country_tab_content">
-          <h3>Indonesia</h3>
-          <div></div>
+          <div  >
+            <Flag countryCode="ID"></Flag>
+            <h3>Indonesia</h3>
+          </div>
         </div>
       </TabPanel>
 
       <TabPanel tabId="viet">
         <div className="country_tab_content">
-          <h3>Vietnam</h3>
-          <div></div>
+          <div  >
+            <Flag countryCode="VN"></Flag>
+            <h3>Vietnam</h3>
+          </div>
         </div>
       </TabPanel>
 
       <TabPanel tabId="aus">
         <div className="country_tab_content">
-          <h3>Australia</h3>
-          <div></div>
+          <div  >
+            <Flag countryCode="AU"></Flag>
+            <h3>Australia</h3>
+          </div>
         </div>
       </TabPanel>
 

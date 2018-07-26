@@ -34,7 +34,7 @@ class Countries extends Component {
         activeRegion =  (<AsiaTabs center={this.props.clicked}></AsiaTabs>);
         break;
         case 'eu':
-        activeRegion =  (<EUTabs ></EUTabs>);
+        activeRegion =  (<EUTabs center={this.props.clicked} ></EUTabs>);
         break;
         case 'afr':
         activeRegion = (<AfrTabs ></AfrTabs>);

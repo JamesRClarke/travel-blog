@@ -66,7 +66,7 @@ const WorldMap = (props) => (
                hidden: { display: "none" }
              }}
            >
-             <circle cx={0} cy={0} r={7} fill={marker.fill}  strokeWidth="1.5" stroke="white" />
+             <circle cx={0} cy={0} r={6} fill="#000"  strokeWidth="1.5" stroke="white" />
            </Marker>
          ))}
        </Markers>
