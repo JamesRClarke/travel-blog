@@ -1,19 +1,37 @@
 import React from 'react'
 import * as Markdown from 'react-markdown'
+import FeaturedImage from './FeaturedImage'
+import { Link } from 'react-router-dom'
+import moment from 'moment'
 
-const BlogContent = (props) => (
-  <article className="media">
-    <div className="media-content">
-      <div className="content">
-        <h1>{props.title}</h1>
-        <Markdown
-          source={
-            props.limit ? props.content.split(" ").splice(0,props.limit).join(" ").concat('...') : props.content
-          }
-        />
+const BlogContent = (props) => {
+  return (
+    <div className="single_blog_post">
+      <h1>Day {props.index}</h1>
+      <div className={`${props.index % 2 === 0 ? 'flex_row' : 'flex_row_reverse'}`}>
+        <FeaturedImage url={props.featuredImage.fields.file.url} />
+        <div className="single_blog_post_content">
+          <h3>{props.title}</h3>
+          <Markdown
+            source={
+              props.limit ? props.content.split(" ").splice(0,props.limit).join(" ").concat('...') : props.content
+            }
+            />
+          <div className="flex_center_between">
+              <Link to={props.path} style={{color: 'blue'}}> Keep reading</Link>
+              <p >
+                {moment(props.date).calendar(null, {
+                  sameDay: '[Today]',
+                  lastDay: '[Yesterday]',
+                  lastWeek: '[Last] dddd',
+                  sameElse: 'MMM Do YYYY'
+                })}
+              </p>
+          </div>
+        </div>
       </div>
-      { props.children }
     </div>
-  </article>
-)
+  )
+}
+
 export default BlogContent

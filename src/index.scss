@@ -1,20 +1,83 @@
-// 1. Import the initial variables
-@import "bulma/sass/utilities/initial-variables";
-@import "bulma/sass/utilities/functions";
 @import 'bulma/bulma';
+@import './assets/styles/styles';
 
 * {
   box-sizing: border-box;
   outline: none;
+
 }
 
 body {
   margin: 0 !important;
   padding: 0;
   font-family: 'Quicksand', sans-serif;
-  font-size: 1.4rem 14px;
+  font-size: 1.3rem;
+  line-height: 1.168;
 }
 
+.container {
+  margin-right: auto; /* 1 */
+  margin-left:  auto; /* 1 */
+  max-width: 1200px; /* 2 */
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.home_text {
+  margin: 20px auto;
+  text-align: center
+}
+
+//NAVBAR
+.navbar {
+  height: 5rem;
+  background: #4c7aa0;
+
+  .navbar-menu {
+    align-items: center;
+    padding:10px;
+    a {
+      color: white;
+      font-size: 1.150rem;
+      margin: 0 15px;
+      &.navbar-item  {
+        &:hover {
+          background: none;
+        }
+
+        &.is-active {
+          background: transparent;
+          font-size: 1.3rem;
+          &:after {
+            content: "";
+            position: absolute;
+            bottom:0;
+            left:0;
+            height: 2px;
+            width:100%;
+            background: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.globe {
+  height: 4rem;
+  width: 4rem;
+}
+
+.icon-plane {
+  transform: rotate(-34deg);
+  margin-left: 6px!important;
+}
+
+// HOME PAGE MAP CONTAINER
 .map_container {
   text-align: center;
   padding:  50px 0;
@@ -47,30 +110,76 @@ body {
     padding: 30px;
     > div {
       display: flex;
-      & h3 {
-        text-align: left;
-      }
+      align-items: center;
     }
-
-
-    // > div {
-    //   display: flex;
-    //   flex-direction: column;
-    //   flex-wrap: wrap
-    // }
   }
-
 }
 
+//Flag Component
 .flag {
   width:30px;
   height:30px;
   display: inline-block;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
-// .flex_abuse {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-// }
+
+.my_journey_blogs {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.single_blog_post {
+  padding: $spacing-lg;
+
+  > h1 {
+    text-align: center;
+    padding: $spacing-default;
+  }
+
+  @media screen and (min-width: 900px) and (min-height: 600px) {
+    padding: $spacing-default;
+    > div {
+      display: flex;
+      img {
+        width: 100%;
+        height: 100%;
+        max-width: 500px;
+        max-height: 500px;
+      }
+    }
+  }
+
+  .single_blog_post_content {
+    padding: $spacing-default $spacing-default 0 $spacing-default;
+    display: flex;
+    flex-direction: column;
+    div {
+      &:first-of-type {
+        flex-grow: 1;
+      }
+    }
+  }
+
+}
+
+.footer {
+  background: #4c7aa0;
+  margin-top: 100px;
+  color: white;
+  text-align: center;
+}
+
+.flex_center_between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex_row {
+  flex-direction: row;
+}
+
+.flex_row_reverse{
+  flex-direction: row-reverse;
+}

@@ -2,7 +2,6 @@ import React from 'react'
 import * as contentful from 'contentful'
 
 import BlogItem from './blog/BlogItem'
-import PageHeader from './components/PageHeader'
 class Blog extends React.Component {
   state = {
     posts: []
@@ -17,23 +16,27 @@ class Blog extends React.Component {
     this.fetchPosts().then(this.setPosts);
   }
 
-  fetchPosts = () => this.client.getEntries()
+  fetchPosts = () => this.client.getEntries('blog')
   setPosts = response => {
     this.setState({
       posts: response.items
     })
   }
-  
+
   render() {
+    let blogs = [];
+    if (this.state.posts && this.state.posts.length) {
+      this.state.posts.map(({fields}, i) => {
+        let blogItem = <BlogItem key={i} index={i} {...fields} />;
+        return blogs.push(blogItem);
+      })
+    } else {
+      blogs = <div></div>;
+    }
+
     return (
-      <div>
-        <PageHeader color="is-primary is-bold" title="Code Blog">
-          Your standard <strong>JavaScript</strong> programming blog, albeit, probably not very good, but I will at least try to keep it entertaining. This blog is a chronological mix of random posts on Angular, React, Functional Programming, and my <strong>project walkthroughs</strong>.
-        </PageHeader>
-        <br/>
-        { this.state.posts.map(({fields}, i) =>
-        <BlogItem key={i} {...fields} />
-      )}
+      <div className="my_journey_blogs">
+        {blogs}
     </div>
   )
 }

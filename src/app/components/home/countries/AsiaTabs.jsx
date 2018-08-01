@@ -21,37 +21,37 @@ const AsiaTabs = (props) => (
       </TabList>
 
       <TabPanel tabId="thai">
-        <div className="country_tab_content">
+        <div className="country_tab_content space_me">
           <div  >
             <Flag countryCode="TH"></Flag>
-            <h3>Thailand</h3>
+            <h5>Thailand</h5>
           </div>
         </div>
       </TabPanel>
 
       <TabPanel tabId="ind">
-        <div className="country_tab_content">
+        <div className="country_tab_content space_me">
           <div  >
             <Flag countryCode="ID"></Flag>
-            <h3>Indonesia</h3>
+            <h5>Indonesia</h5>
           </div>
         </div>
       </TabPanel>
 
       <TabPanel tabId="viet">
-        <div className="country_tab_content">
+        <div className="country_tab_content space_me">
           <div  >
             <Flag countryCode="VN"></Flag>
-            <h3>Vietnam</h3>
+            <h5>Vietnam</h5>
           </div>
         </div>
       </TabPanel>
 
       <TabPanel tabId="aus">
-        <div className="country_tab_content">
+        <div className="country_tab_content space_me">
           <div  >
             <Flag countryCode="AU"></Flag>
-            <h3>Australia</h3>
+            <h5>Australia</h5>
           </div>
         </div>
       </TabPanel>

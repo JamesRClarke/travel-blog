@@ -19,12 +19,14 @@ class Home extends React.Component {
   render() {
     return(
       <div>
-        <div className="map_container">
-          <Countries clicked={this.changeCenter}/>
-          <WorldMap json={mapJson} center={this.state.center} />
+        <div className="container home_text">
+          </div>
+          <div className="map_container">
+            <Countries clicked={this.changeCenter}/>
+            <WorldMap json={mapJson} center={this.state.center} />
+          </div>
         </div>
-      </div>
-    )
+      )
+    }
   }
-}
-export default Home;
+  export default Home;

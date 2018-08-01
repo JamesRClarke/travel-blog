@@ -1,0 +1,156 @@
+// ----- Basic styles -----
+// Small devices (landscape phones, less than 768px)
+// @include media-breakpoint-down(sm) {
+// 	html {
+// 		font-size: 10px;
+// 	}
+// }
+//
+// // Medium devices (tablets, 768px and up)
+// @include media-breakpoint-up(md) {
+// 	html {
+// 		font-size: 12px;
+// 	}
+//
+// }
+
+html * {
+	outline: 0 !important;
+	outline: none !important;
+}
+
+// Text styles
+body {
+	@include rem(font-size, 16px);
+	background: #f8f8f8;
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+// h3, .h3, h3, .h3, h4, .h4, h5, .h5 {
+// 	@include rem(margin-bottom, 10px);
+// }
+
+h1, .h1 { @include rem(font-size, 32px); }
+h2, .h2 { @include rem(font-size, 28px); }
+h3, .h3 { @include rem(font-size, 22px); }
+h4, .h4 { @include rem(font-size, 18px); }
+h5, .h5 { @include rem(font-size, 12px); }
+
+.text-lg { @include rem(font-size, 24px); }
+.text-md { @include rem(font-size, 18px); }
+.text-sm { @include rem(font-size, 14px); }
+
+
+input {
+	font-family: $font-regular;
+
+	&::placeholder {
+		color: #fff;
+	}
+
+	&:focus::placeholder {
+    opacity: 0;
+	}
+}
+
+p, ul, ol {
+	margin: 0;
+	line-height: 1.3;
+
+	+ p {
+		margin-top: $spacing-small;
+	}
+}
+// p, ul, ol { @include rem(margin, 0 0 20px 0); }
+ul, ol {
+	@include rem(padding, 0 0 0 25px);
+
+	li { @include rem(padding, 0 0 0 5px); }
+	ul, ol { margin-bottom: 0; }
+}
+
+ul, ol, ul li, ol li {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+
+// Links and Nav
+a {
+	color: white;
+	text-decoration: none;
+	transition: color 300ms;
+	cursor: pointer;
+
+	&:hover, &:focus {
+		// color: $color-grey-dark;
+		text-decoration: none;
+	}
+}
+
+//Buttons
+
+.btn {
+	display: inline-block;
+	@include rem("padding", 8px 50px);
+	border-radius: 25px;
+	font-weight: bold;
+	transition: all 300ms;
+	cursor: pointer;
+	background: #fff;
+	border: 0;
+	color: $color-o2;
+	margin: 0 auto;
+	font-family: $font-regular;
+
+	&:disabled {
+		opacity: 0.4;
+ 	}
+
+	&:hover {
+		background: $color-o2;
+		color: #fff;
+	}
+
+	&:focus {
+    outline: 0;
+  }
+
+	&.blue {
+		background: $color-o2;
+		color: #fff;
+	}
+
+	&.logout {
+		margin: 0;
+	}
+
+	&.account-btn {
+		padding: 12px 50px;
+	  background: $color-o2-text;
+	  border: none;
+	  border-radius: 3px;
+	  color: $color-white;
+	  @include rem(font-size,18px);
+		font-weight: normal;
+		margin-bottom: $spacing-small;
+	}
+
+		&:hover {
+			background: lighten($color-o2, 10%);
+		}
+
+}
+
+// Image groups
+.img-group {
+	img {
+		margin-bottom: $spacing-default;
+	}
+	img:last-child {
+		margin-bottom: 0;
+	}
+}

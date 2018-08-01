@@ -27,7 +27,7 @@ class Countries extends Component {
   }
 
   render() {
-    let activeRegion = <h1>Select a region to discover more...</h1>;
+    let activeRegion = null;
 
       switch (this.state.currentRegion) {
         case 'asia':
@@ -45,41 +45,42 @@ class Countries extends Component {
         case 'na':
         activeRegion = (<NATabs ></NATabs>);
         break;
-        default: activeRegion = <h1>Select a region to discover more...</h1>
+        default: activeRegion = <h4>Select a region to discover more...</h4>
       }
 
-        const regions = [
-          {id: 1, name: 'Asia', region: 'asia'},
-          {id: 2, name: 'Europe', region: 'eu'},
-          {id: 3, name: 'Africa', region: 'afr'},
-          {id: 4, name: 'South America', region: 'sa'},
-          {id: 5, name: 'North America', region: 'na'}
-        ]
+      const regions = [
+        {id: 1, name: 'Asia', region: 'asia'},
+        {id: 2, name: 'Europe', region: 'eu'},
+        {id: 3, name: 'Africa', region: 'afr'},
+        {id: 4, name: 'South America', region: 'sa'},
+        {id: 5, name: 'North America', region: 'na'}
+      ]
 
-        let regionTabs = [];
-        regions.map((value) => {
-          let tabElement = null;
-          tabElement =
-          <Tab
-            key={value.id}
-            tabFor={value.region}
-            onClick={(event) => this.onRegionChangeHandler(event, value.region)}
-            >{value.name}</Tab>
-          regionTabs.push(tabElement);
-            })
+      let regionTabs = [];
+      regions.map((value) => {
+        let tabElement = null;
+        tabElement =
+        <Tab
+          key={value.id}
+          tabFor={value.region}
+          onClick={(event) => this.onRegionChangeHandler(event, value.region)}
+          >{value.name}</Tab>
+        return regionTabs.push(tabElement);
 
-            return(
-              <div className="world_map countries">
-                <Tabs  >
-                  <TabList  >
-                    {regionTabs}
-                  </TabList>
-                  <Tabs>
-                    {activeRegion}
-                  </Tabs>
-                </Tabs>
-              </div>
-            )
-          }
-        }
-        export default Countries;
+      })
+
+      return(
+        <div className="world_map countries">
+          <Tabs  >
+            <TabList  >
+              {regionTabs}
+            </TabList>
+            <Tabs>
+              {activeRegion}
+            </Tabs>
+          </Tabs>
+        </div>
+      )
+    }
+  }
+  export default Countries;

@@ -22,7 +22,7 @@ const EUTabs = (props) => (
       <div className="country_tab_content">
         <div  >
           <Flag countryCode="NL"></Flag>
-          <h3>The Netherlands</h3>
+          <h5>The Netherlands</h5>
         </div>
 
           <div> </div>
@@ -32,7 +32,7 @@ const EUTabs = (props) => (
       <div className="country_tab_content">
         <div  >
           <Flag countryCode="HU"></Flag>
-          <h3>Hungary</h3>
+          <h5>Hungary</h5>
         </div>
       </div>
     </TabPanel>
@@ -40,7 +40,7 @@ const EUTabs = (props) => (
       <div className="country_tab_content">
         <div  >
           <Flag countryCode="PL"></Flag>
-          <h3>Poland</h3>
+          <h5>Poland</h5>
         </div>
       </div>
     </TabPanel>
@@ -48,7 +48,7 @@ const EUTabs = (props) => (
       <div className="country_tab_content">
         <div  >
           <Flag countryCode="IT"></Flag>
-          <h3>Italy</h3>
+          <h5>Italy</h5>
         </div>
       </div>
     </TabPanel>
@@ -56,7 +56,7 @@ const EUTabs = (props) => (
       <div className="country_tab_content">
         <div  >
           <Flag countryCode="GB"></Flag>
-          <h3>England</h3>
+          <h5>England</h5>
         </div>
       </div>
     </TabPanel>
