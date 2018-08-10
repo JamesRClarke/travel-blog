@@ -45,6 +45,15 @@ $spacing-small: 15px;
 $spacing-default: calc(#{$spacing-small} * 2);
 $spacing-lg: calc(#{$spacing-small} * 3);
 
+
+// @include media-breakpoint-down(md) {
+//   $spacing-small: $spacing-small / 2;
+//   $spacing-default: $spacing-small
+//   $spacing-lg:  calc(#{$spacing-small} * 2);
+// }
+
+
+
 // Fonts
 $font-regular: "frutiger-light",
 Arial,

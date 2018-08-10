@@ -13,6 +13,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "bootstrap": "4.0.0-beta",
     "bulma": "^0.7.1",
     "bulma-extensions": "^2.2.1",
     "contentful": "^6.1.1",

@@ -11,14 +11,15 @@ const BlogContent = (props) => {
       <div className={`${props.index % 2 === 0 ? 'flex_row' : 'flex_row_reverse'}`}>
         <FeaturedImage url={props.featuredImage.fields.file.url} />
         <div className="single_blog_post_content">
-          <h3>{props.title}</h3>
+          <h3 style={{marginBottom: '30px'}}>{props.title}</h3>
           <Markdown
             source={
               props.limit ? props.content.split(" ").splice(0,props.limit).join(" ").concat('...') : props.content
             }
             />
-          <div className="flex_center_between">
-              <Link to={props.path} style={{color: 'blue'}}> Keep reading</Link>
+          <div className="read_more_date">
+              <Link to={{ pathname: `/blog/${props.path}`, state: { props: props} }} style={{color: 'blue'}}> Keep reading</Link>
+
               <p >
                 {moment(props.date).calendar(null, {
                   sameDay: '[Today]',

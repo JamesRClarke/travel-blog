@@ -1,5 +1,6 @@
 @import 'bulma/bulma';
-@import './assets/styles/styles';
+
+@import './assets/styles/_styles';
 
 * {
   box-sizing: border-box;
@@ -67,101 +68,7 @@ button {
   }
 }
 
-.globe {
-  height: 4rem;
-  width: 4rem;
-}
 
-.icon-plane {
-  transform: rotate(-34deg);
-  margin-left: 6px!important;
-}
-
-// HOME PAGE MAP CONTAINER
-.map_container {
-  text-align: center;
-  padding:  50px 0;
-  display: flex;
-  align-items: top;
-  justify-content: space-between;
-
-
-  .world_map {
-    width: 50%;
-    display: inline-block;
-    vertical-align: top;
-
-    &.countries {
-      margin-left: 10px;
-    }
-  }
-
-  @media only screen and (max-width: 720px) {
-    flex-direction: column;
-    flex-wrap: wrap-reverse;
-
-    .world_map {
-      margin: 15px 0;
-      width:100%;
-    }
-  }
-
-  .country_tab_content {
-    padding: 30px;
-    > div {
-      display: flex;
-      align-items: center;
-    }
-  }
-}
-
-//Flag Component
-.flag {
-  width:30px;
-  height:30px;
-  display: inline-block;
-  margin-right: 10px;
-}
-
-
-.my_journey_blogs {
-  display: flex;
-  flex-direction: column-reverse;
-}
-
-.single_blog_post {
-  padding: $spacing-lg;
-
-  > h1 {
-    text-align: center;
-    padding: $spacing-default;
-  }
-
-  @media screen and (min-width: 900px) and (min-height: 600px) {
-    padding: $spacing-default;
-    > div {
-      display: flex;
-      img {
-        width: 100%;
-        height: 100%;
-        max-width: 500px;
-        max-height: 500px;
-      }
-    }
-  }
-
-  .single_blog_post_content {
-    padding: $spacing-default $spacing-default 0 $spacing-default;
-    display: flex;
-    flex-direction: column;
-    div {
-      &:first-of-type {
-        flex-grow: 1;
-      }
-    }
-  }
-
-}
 
 .footer {
   background: #4c7aa0;
@@ -170,11 +77,7 @@ button {
   text-align: center;
 }
 
-.flex_center_between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 
 .flex_row {
   flex-direction: row;
