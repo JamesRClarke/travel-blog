@@ -45,6 +45,11 @@
     padding: $spacing-default $spacing-default 0 $spacing-default;
     display: flex;
     flex-direction: column;
+
+    h3 {
+      margin-bottom: $spacing-default;
+    }
+
     div {
       &:first-of-type {
         flex-grow: 1;
@@ -56,6 +61,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      a {
+        color: blue;
+      }
     }
 
     @include media-breakpoint-down(md) {

@@ -44,9 +44,9 @@ class Header extends React.Component {
             </NavLink>
             <NavLink
               className="navbar-item"
-              to="/food"
+              to="/gallery"
               activeClassName="is-active">
-              Food
+              Gallery
             </NavLink>
             <div className="navbar-item">
               <a href="https://www.instagram.com/jamesrclarkee/" rel="noopener noreferrer" target="_blank"><i className="fab fa-instagram"></i></a>
