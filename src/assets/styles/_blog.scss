@@ -81,3 +81,17 @@
   }
 
 }
+
+.social_share_buttons {
+  margin: 50px 0 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+  }
+  >* {
+    margin: 0 $spacing-small;
+  }
+}
