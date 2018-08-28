@@ -6,15 +6,15 @@ import * as Markdown from 'react-markdown'
 import {
   FacebookShareButton,
   FacebookIcon,
-  FacebookShareCount,
+  // FacebookShareCount,
 
   TwitterShareButton,
   TwitterIcon,
-  TwitterShareCount,
+  // TwitterShareCount,
 
   EmailShareButton,
-  EmailIcon,
-  EmailShareCount
+  EmailIcon
+  // EmailShareCount
 
 
   // GooglePlusShareButton,

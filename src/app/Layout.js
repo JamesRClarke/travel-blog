@@ -7,6 +7,8 @@ import Content from './layout/Content'
 import Header from './layout/Header'
 import Footer from './layout/Footer'
 import Router from './layout/Router'
+// import Subscribe from './layout/Subscribe'
+/*<Subscribe/>*/
 
 const Layout = ({ children }) => (
   <Site>
@@ -16,11 +18,12 @@ const Layout = ({ children }) => (
         {name: 'viewport', content: 'width=device-width', initialScale: 1},
 
         { name: 'Travel Blog', content: 'James Clarke\'s personal travel and blogging website.' },
-        
+
         { name: 'keywords', content: 'resume, blog, porfolio, james, clarke, travel, food, photography' },
       ]}
       script={[
-        { 'src': 'https://use.fontawesome.com/releases/v5.0.4/js/all.js'},
+        { 'src': 'https://use.fontawesome.com/releases/v5.0.4/js/all.js'}
+
       ]}
       link={[
         {'rel':'stylesheet', 'href': 'https://maxcdn.bootstrapcdn.com/font-awesome/5.0.0/css/font-awesome.min.css'},

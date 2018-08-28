@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Gallery from 'react-grid-gallery';
 import * as contentful from 'contentful'
-
+//
 const IMAGES =
 [{
   src: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
@@ -43,20 +43,29 @@ class GalleryPackage extends Component {
     this.fetchPosts().then(this.setPosts);
   }
 
-  fetchPosts = () => this.client.getEntry('gallery')
+  fetchPosts = () => this.client.getEntries({content_type: 'gallery'})
   setPosts = response => {
-    console.log(response);
-    this.setState({
-      images: response.items
+
+    let galleryImages = response.items;
+    galleryImages.map(img => {
+      img.fields.galleryImage[0].src = `https:${img.fields.image.fields.file.url}`;
+      img.fields.galleryImage[0].thumbnail = `https:${img.fields.image.fields.file.url}`;
     })
-    console.log(this.state.images);
+    // const IMAGES = [];
+    // galleryImages.map(img => {
+    //   IMAGES.push(img.fields.galleryImage[0])
+    // })
+    this.setState({
+      images: IMAGES
+    })
+    console.log(IMAGES);
   }
 
 
   render() {
 
     return (
-      <Gallery images={IMAGES}/>
+      <Gallery images={this.state.images}/>
     )
   }
 
